@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AssemblyCSharp
+namespace Differ.Math.Util
 {
 	public class Util
 	{

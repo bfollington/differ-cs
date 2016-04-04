@@ -7,7 +7,7 @@ namespace Differ.Shapes
 	public class Circle : Shape
 	{
 		public float radius { get; private set; }
-		public float transformedRadius { get { return radius * scaleX; } private set; }
+		public float transformedRadius { get { return radius * scaleX; } }
 
 		public Circle (float x, float y, float radius) : base(x, y)
 		{
@@ -30,7 +30,7 @@ namespace Differ.Shapes
 			return Sat2D.testCircleVsPolygon( this, polygon, flip );
 		}
 
-		public override RayCollision testRay (UnityEngine.Ray ray)
+		public override RayCollision testRay (Ray ray)
 		{
 			return Sat2D.testRayVsCircle(ray, this);
 		}

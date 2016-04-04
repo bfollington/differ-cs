@@ -28,7 +28,6 @@ namespace Differ.Shapes
 
 		        return _transformedVertices;
 			}
-			private set;
 		}
         
 
@@ -39,7 +38,7 @@ namespace Differ.Shapes
 			name = "polygon(sides:" + vertices.Count + ")";
 
 			_transformedVertices = new List<Vector>();
-			vertices = vertices;
+			this.vertices = vertices;
 		}
 
 		public override ShapeCollision test (Shape shape)

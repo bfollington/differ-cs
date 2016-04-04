@@ -8,13 +8,13 @@ namespace Differ.Shapes
 	public class Shape
 	{
 		/** The state of this shape, if inactive can be ignored in results */
-		public bool active {get;set;} = true;
+		public bool active = true;
         /** The name of this shape, to help in debugging */
-	    public string name {get;set;} = "shape";
+	    public string name = "shape";
         /** A generic data object where you can store anything you want, for later use */
-	    public object data {get;set;}
+	    public object data;
         /** A list of tags to use for marking shapes with data for later use, by key/value */
-	    public IDictionary<String, String> tags {get;}
+	    public IDictionary<String, String> tags {get; private set;}
 
         /** The position of this shape */
 	    public Vector position {

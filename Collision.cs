@@ -38,18 +38,18 @@ namespace Differ
 		/** Test a line between two points against a list of shapes.
             When no collision is found, this function returns null.
             Returns a `RayCollision` if a collision is found. */
-		public RayCollision rayWithShape(Ray ray, Shape shape) {
+		public static RayCollision rayWithShape(Ray ray, Shape shape) {
 			return shape.testRay(ray);
 		}
 
 		/** Test a ray between two points against a list of shapes.
             When no collision is found, this function returns an empty array, this function will never return null.
             Returns a list of `RayCollision` information for each collision found. */
-		public IList<RayCollision> rayWithShapes(Ray ray, IList<Shape> shapes) {
+		public static IList<RayCollision> rayWithShapes(Ray ray, IList<Shape> shapes) {
 			var results = new List<RayCollision>();
 
 	        foreach (var shape in shapes) {
-	            var result = rayWithShape(ray, shape, null);
+	            var result = rayWithShape(ray, shape);
 	            if (result != null) {
 	                results.Add(result);
 	            }
@@ -61,7 +61,7 @@ namespace Differ
 		/** Test a ray against another ray.
             When no collision is found, this function returns null.
             Returns a `RayIntersection` if a collision is found. */
-		public RayIntersection rayWithRay(Ray ray1, Ray ray2) {
+		public static RayIntersection rayWithRay(Ray ray1, Ray ray2) {
 			return Sat2D.testRayVsRay(ray1, ray2);
 		}
 
@@ -73,7 +73,7 @@ namespace Differ
 	        var results = new List<RayIntersection>();
 
 	        foreach (var other in rays) {
-	            var result = rayWithRay(ray, other, null);
+	            var result = rayWithRay(ray, other);
 	            if (result != null) {
 	                results.Add(result);
 	            }
