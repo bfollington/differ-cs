@@ -68,13 +68,13 @@ namespace Differ.Shapes
 				throw new ArgumentException("A polygon must have a least 3 sides.");
 			}
 
-			float rotation = (System.Math.PI * 2) / sides;
+			float rotation = (float)(System.Math.PI * 2) / sides;
 			float angle;
 			Vector vector;
 			IList<Vector> vertices = new List<Vector>();
 
 			for (var i = 0; i < sides; i++) {
-				angle = (i * rotation) + ((System.Math.PI - rotation) * 0.5);
+				angle = (float)((i * rotation) + ((System.Math.PI - rotation) * 0.5));
 	            vector = new Vector();
 	            vector.x = Mathf.Cos(angle) * radius;
 	            vector.y = Mathf.Sin(angle) * radius;

@@ -14,8 +14,6 @@ namespace Differ.Math
 		public float tx;
 		public float ty;
 
-    	float _last_rotation = 0;
-
 		public Matrix(float a = 1, float b = 0, float c = 0, float d = 1, float tx = 0, float ty = 0) 
 		{
 			this.a = a;

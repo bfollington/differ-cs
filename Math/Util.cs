@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Differ.Math.Util
+namespace Differ.Math
 {
 	public class Util
 	{
@@ -9,7 +9,7 @@ namespace Differ.Math.Util
 	    }
 
 	    public static float vec_length(float x, float y) {
-	    	return Math.Sqrt(vec_lengthsq(x, y));
+	    	return (float)System.Math.Sqrt(vec_lengthsq(x, y));
 	    }
 
 		public static float vec_normalize(float length, float component) {

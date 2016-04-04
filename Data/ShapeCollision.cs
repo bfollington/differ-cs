@@ -33,8 +33,8 @@ namespace Differ.Data
 
 		public void reset() {
 			shape1 = shape2 = null;
-	        overlap = separationX = separationY = unitVectorX = unitVectorY = 0.0;
-	        otherOverlap = otherSeparationX = otherSeparationY = otherUnitVectorX = otherUnitVectorY = 0.0;
+	        overlap = separationX = separationY = unitVectorX = unitVectorY = 0.0f;
+	        otherOverlap = otherSeparationX = otherSeparationY = otherUnitVectorX = otherUnitVectorY = 0.0f;
 		}
 
 		public ShapeCollision clone() {

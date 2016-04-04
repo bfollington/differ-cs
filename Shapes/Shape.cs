@@ -108,22 +108,22 @@ namespace Differ.Shapes
 
 		/** Test this shape against another shape. */
 		public virtual ShapeCollision test(Shape shape) {
-
+			return null;
 		}
 
         /** Test this shape against a circle. */
 	    public virtual ShapeCollision testCircle( Circle circle, bool flip = false ) {
-
+			return null;
 	    }
 
         /** Test this shape against a polygon. */
 	    public virtual ShapeCollision testPolygon( Polygon polygon, bool flip = false ) {
-
+			return null;
 	    }
 
         /** Test this shape against a ray. */
 	    public virtual RayCollision testRay( Ray ray ) {
-
+			return null;
 	    }
 
 	    private void refresh_transform() {

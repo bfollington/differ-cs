@@ -32,7 +32,7 @@ namespace Differ.Math
 
 		public float lengthsq { get { return x * x + y * y; } }
 
-		public Vector (float x, float y)
+		public Vector (float x = 0, float y = 0)
 		{	
 			this.x = x;
 			this.y = y;
