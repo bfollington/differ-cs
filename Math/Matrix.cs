@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Differ.Math
 {
@@ -46,8 +45,8 @@ namespace Differ.Math
 		}
 
 		public void rotate (float angle) {
-			var cos = Mathf.Cos(angle);
-	        var sin = Mathf.Sin(angle);
+			var cos = (float)System.Math.Cos(angle);
+	        var sin = (float)System.Math.Sin(angle);
 
 	        var a1 = a * cos - b * sin;
 	            b = a * sin + b * cos;

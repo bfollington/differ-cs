@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Differ.Math
 {
@@ -15,18 +14,18 @@ namespace Differ.Math
 
 		public float length {
 			get {
-				return Mathf.Sqrt(lengthsq);
+				return (float)System.Math.Sqrt(lengthsq);
 			}
 
 			set {
-				float ep = 0.00000001f;
-				float angle = Mathf.Atan2(y, x);
+				float ep = float.Epsilon;
+				float angle = (float)System.Math.Atan2(y, x);
 
-				x = Mathf.Cos(angle) * value;
-				y = Mathf.Sin(angle) * value;
+				x = (float)System.Math.Cos(angle) * value;
+				y = (float)System.Math.Sin(angle) * value;
 
-				if (Mathf.Abs(x) < ep) x = 0;
-				if (Mathf.Abs(y) < ep) y = 0;
+				if (System.Math.Abs(x) < ep) x = 0;
+				if (System.Math.Abs(y) < ep) y = 0;
 			}
 		}
 
@@ -74,7 +73,7 @@ namespace Differ.Math
             Nothing is done if the vector is already shorter.
             Returns this vector, modified. */
 		public Vector truncate(float max) {
-			length = Mathf.Min(max, length);
+			length = (float)System.Math.Min(max, length);
 			return this;
 		}
 

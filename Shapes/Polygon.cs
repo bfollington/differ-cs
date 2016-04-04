@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using Differ.Data;
 using Differ.Math;
 using Differ.Sat;
@@ -76,8 +75,8 @@ namespace Differ.Shapes
 			for (var i = 0; i < sides; i++) {
 				angle = (float)((i * rotation) + ((System.Math.PI - rotation) * 0.5));
 	            vector = new Vector();
-	            vector.x = Mathf.Cos(angle) * radius;
-	            vector.y = Mathf.Sin(angle) * radius;
+				vector.x = (float)System.Math.Cos(angle) * radius;
+				vector.y = (float)System.Math.Sin(angle) * radius;
 	            vertices.Add(vector);
 			}
 

@@ -356,6 +356,7 @@ namespace Differ.Sat
 
 	        var result = new ShapeCollision();
 
+	        // TODO: This is unused, check original source
 	        var offset = 0.0f;
 	        var test1 = 0.0f;
 	        var test2 = 0.0f;

@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 using Differ.Math;
 
 namespace Differ.Shapes
