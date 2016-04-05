@@ -7,6 +7,7 @@ namespace Differ.Math
 	//into an existing codebase. This means that using abstracts or similar you can add a function like "toMyEngineVectorFormat()"
 	//or simple an adapter pattern to convert to your preferred format. It simplifies usage and handles internals, nothing else.
 	//This also means that ALL of these functions are used and are needed.
+	[Serializable]
 	public class Vector
 	{
 		public float x = 0;

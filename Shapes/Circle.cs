@@ -6,13 +6,13 @@ namespace Differ.Shapes
 {
 	public class Circle : Shape
 	{
-		public float radius { get; private set; }
+		private float _radius;
+		public float radius { get { return _radius; } set { _radius = value; name = "circle " + radius; } }
 		public float transformedRadius { get { return radius * scaleX; } }
 
 		public Circle (float x, float y, float radius) : base(x, y)
 		{
 			this.radius = radius;
-			name = "circle " + radius;
 		}
 
 		public override ShapeCollision test (Shape shape)

@@ -9,7 +9,18 @@ namespace Differ.Shapes
 	public class Polygon : Shape
 	{
 		/** The vertices of this shape */
-		public IList<Vector> vertices { get; private set; }
+		private IList<Vector> _vertices {
+			get {
+				return _vertices;
+			}
+
+			set {
+				_vertices = value;
+				name = "polygon(sides:" + _vertices.Count + ")";
+			}
+		}
+		public IList<Vector> vertices { get; set; }
+
 		/** The transformed (rotated/scale) vertices cache */
 		public IList<Vector> transformedVertices {
 			get {
@@ -34,8 +45,6 @@ namespace Differ.Shapes
 
 		public Polygon (float x, float y, IList<Vector> vertices) : base(x, y)
 		{
-			name = "polygon(sides:" + vertices.Count + ")";
-
 			_transformedVertices = new List<Vector>();
 			this.vertices = vertices;
 		}

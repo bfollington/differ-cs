@@ -1,12 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Differ.Data;
-using Differ.Shapes;
 using Differ.Math;
-using System.Collections.Generic;
+using Differ.Shapes;
 
 namespace Differ.Sat
 {
-	public class Sat2D
+    public class Sat2D
 	{
 		/** Internal api - test a circle against a polygon */
 	    public static ShapeCollision testCircleVsPolygon(Circle circle, Polygon polygon, bool flip = false) {
