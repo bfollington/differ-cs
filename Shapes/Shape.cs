@@ -54,8 +54,8 @@ namespace Differ.Shapes
 	    		return _rotation;
 	    	}
 	    	set {
-		        refresh_transform();
 		        _rotation = value;
+		        refresh_transform();
 	    	}
 	    }
 

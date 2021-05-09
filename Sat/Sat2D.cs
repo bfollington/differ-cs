@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Differ.Data;
 using Differ.Math;
 using Differ.Shapes;
@@ -193,15 +194,14 @@ namespace Differ.Sat
 		static ShapeCollision tmp2 = new ShapeCollision();
 
 	    public static ShapeCollision testPolygonVsPolygon(Polygon polygon1, Polygon polygon2, bool flip = false ) {
-
-	        var output = new ShapeCollision();
+			var output = new ShapeCollision();
 	        
 	        if ( (tmp1 = checkPolygons(polygon1, polygon2, flip)) == null) {
 	            return null;
 	        }
 
 	        if ( (tmp2 = checkPolygons(polygon2, polygon1, !flip)) == null) {
-	            return null;
+				return null;
 	        }
 
 	        ShapeCollision result = null;
@@ -224,7 +224,7 @@ namespace Differ.Sat
 			output.copy_from(result);
 	        result = other = null;
 
-	        return result;
+	        return output;
 
 	    } //testPolygonVsPolygon
 
@@ -356,7 +356,6 @@ namespace Differ.Sat
 	        var result = new ShapeCollision();
 
 	        // TODO: This is unused, check original source
-	        var offset = 0.0f;
 	        var test1 = 0.0f;
 	        var test2 = 0.0f;
 	        var testNum = 0.0f;
@@ -384,7 +383,7 @@ namespace Differ.Sat
 	            min1 = Util.vec_dot(axisX, axisY, verts1[0].x, verts1[0].y);
 	            max1 = min1;
 
-				for (var j = 1; i < verts1.Count; i++) {
+				for (var j = 1; j < verts1.Count; j++) {
 	                testNum = Util.vec_dot(axisX, axisY, verts1[j].x, verts1[j].y);
 	                if (testNum < min1) min1 = testNum;
 	                if (testNum > max1) max1 = testNum;
@@ -394,7 +393,7 @@ namespace Differ.Sat
 	            min2 = Util.vec_dot(axisX, axisY, verts2[0].x, verts2[0].y);
 	            max2 = min2;
 
-				for (var j = 1; i < verts2.Count; i++) {
+				for (var j = 1; j < verts2.Count; j++) {
 	                testNum = Util.vec_dot(axisX, axisY, verts2[j].x, verts2[j].y);
 	                if (testNum < min2) min2 = testNum;
 	                if (testNum > max2) max2 = testNum;
@@ -403,9 +402,12 @@ namespace Differ.Sat
 	            test1 = min1 - max2;
 	            test2 = min2 - max1;
 
-	            if(test1 > 0 || test2 > 0) return null;
+				if (test1 > 0 || test2 > 0)
+				{
+					return null;
+				}
 
-	            var distMin = -(max2 - min1);
+				var distMin = -(max2 - min1);
 	            if (flip) distMin *= -1;
 
 	            if (System.Math.Abs(distMin) < closest) {
